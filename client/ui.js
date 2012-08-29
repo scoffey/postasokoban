@@ -144,7 +144,7 @@ function sendInvite() {
 }
 
 function sendBrag() {
-  var messageStr = 'I just reached ' + gFinalScore + ' in Posta Sokoban!';
+  var messageStr = 'I Have the absolut truth Posta Sokoban!';
   FB.ui({ method: 'feed',
     caption: messageStr,
     picture: 'http://scoffey.github.com/postasokoban/images/box.png',
@@ -177,7 +177,7 @@ function leaderboardInit() {
 }
 
 function getFriends() {
-	FB.api('/' + appId + '/me/friends', function(response) {
+	FB.api('/me/friends', function(response) {
 		if(response.data) {
 			$.each(response.data,function(index,friend) {
 				console.log(friend.name + ' has id:' + friend.id);
