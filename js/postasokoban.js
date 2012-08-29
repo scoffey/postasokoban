@@ -8,6 +8,11 @@ window.addEvent('domready', function () {
 	var lastLevel = (Cookie.read('postasokoban') || '0').toInt();
 	var loader = new SokobanIndexedLevelLoader(mazeDatabase, 'sokoban');
 	sokoban = new SokobanGame(loader);
+	sokoban.onLevelUp = function () {
+		this.echo(this.levelMessage() + ' / '
+			+ this.loader.mazeDatabase.length);
+		Cookie.write('sokowalter', this.loader.index);
+	}.bind(sokoban);
 	
 	$('start').addEvent('click', function () {
 		run(0);
@@ -58,11 +63,11 @@ window.addEvent('domready', function () {
 var mazeDatabase = [
                     
     // easy
-	'####|#@.#|#$ #|#  #|# $#|#. #|#  #|####',
 	'#####|#  .#|# $ #|##@##|##$##|#   #|#.  #|#####',
 	'#######|#. # .#|# $@$ #|#  #  #|#######',
 	'######|#.   #|#$$  #|#@.###|####  ',
 	'####### |#+.   ##|# # $$ #|#      #|########',
+	'####|#@.#|#$ #|#  #|# $#|#. #|#  #|####',
 	' #####|##  .#|#@$  #|#  * #|######',
 	'   #####|####   #|#@$  # #|#. $  .#|########',
 	'########|#  .#  #|#  $@$ #|#  ## .#|########',
