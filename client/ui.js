@@ -177,7 +177,7 @@ function leaderboardInit() {
 }
 
 function getFriends() {
-	FB.api('/me/friends', function(response) {
+    FB.api('/me/friends', {fields: 'name,id'}, function(response) {
 		if(response.data) {
 			$.each(response.data,function(index,friend) {
 				console.log(friend.name + ' has id:' + friend.id);
