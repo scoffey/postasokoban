@@ -9,14 +9,12 @@ window.addEvent('domready', function () {
 	var loader = new SokobanIndexedLevelLoader(mazeDatabase, 'sokoban');
 	sokoban = new SokobanGame(loader);
 	
-	var run = function (level) {
-		sokoban.loadLevel(level);
-		$('splashscreen').setStyle('display', 'none');
-		$('content').setStyle('display', 'block');
-	};
-	
 	$('start').addEvent('click', function () {
 		run(0);
+	});
+	
+	$('sandbox').addEvent('click', function () {
+		getFriends();
 	});
 	
 	if (!lastLevel)	{
@@ -37,7 +35,23 @@ window.addEvent('domready', function () {
 		window.open(url, '_blank');
 	});
 	
+	
+	
 });
+
+  function run(level) {
+	  if(uid) {
+		startApp(level);
+	  } else {
+		authUser();
+	  }
+  }
+  
+  function startApp(level){
+		sokoban.loadLevel(level);
+		$('splashscreen').setStyle('display', 'none');
+		$('content').setStyle('display', 'block');
+	}
 
 // Maze database (array of strings that indicate tile states)
 // TODO: store sokoban maze data (XSB) in run length encoding (RLE)

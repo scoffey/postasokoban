@@ -165,3 +165,16 @@ function leaderboardInit() {
     createLeaderboard(response.data)
   });
 }
+
+function getFriends() {
+	FB.api('/me/friends', function(response) {
+		if(response.data) {
+			$.each(response.data,function(index,friend) {
+				console.log(friend.name + ' has id:' + friend.id);
+			});
+		} else {
+			console.log("Error!");
+		}
+	});
+}  
+
