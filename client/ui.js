@@ -154,6 +154,17 @@ function sendBrag() {
   }, fbCallback);
 }
 
+function sendLevelUp(level) {
+  var messageStr = 'I just reached level ' + level + ' in Posta Sokoban!';
+
+  FB.ui({ method: 'feed',
+    caption: messageStr,
+    picture: 'http://scoffey.github.com/postasokoban/images/box.png',
+    name: 'Play Posta Sokoban Now',
+    link: 'http://scoffey.github.com/postasokoban/'
+  }, fbCallback);
+}
+
 function fbCallback(response) {
   console.log(response);
 }
