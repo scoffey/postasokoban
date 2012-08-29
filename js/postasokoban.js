@@ -12,7 +12,7 @@ window.addEvent('domready', function () {
 		this.echo(this.levelMessage() + ' / '
 			+ this.loader.mazeDatabase.length);
 		Cookie.write('sokowalter', this.loader.index);
-		if(this.level !=lastLevel){
+		if(sokoban.levelName != 0 && sokoban.levelName !=lastLevel){
 			sendLevelUp(this.level + 1);
 		}
 	}.bind(sokoban);
