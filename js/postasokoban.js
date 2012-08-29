@@ -20,11 +20,7 @@ window.addEvent('domready', function () {
 	$('start').addEvent('click', function () {
 		run(0);
 	});
-	
-	$('getFriends').addEvent('click', function () { getFriends(); });
-	$('sendInvite').addEvent('click', function () { sendInvite(); });
-	$('sendBrag').addEvent('click', function () { sendBrag(); });
-	
+		
 	if (!lastLevel)	{
 		$('resume').addClass('disabled');
 	} else {
@@ -48,10 +44,10 @@ window.addEvent('domready', function () {
 });
 
   function run(level) {
-	  if(uid) {
+	  if(uid!="0") {
 		startApp(level);
 	  } else {
-		authUser();
+		authUser(level);
 	  }
   }
   
