@@ -5,11 +5,11 @@ body {
 }
 
 #topbar {
-	background-color: #ffea2f;
+	background-color: #0c3;
 	color: black;
 	margin: 0;
 	padding: 8px;
-	font-size: 16pt;
+	font-size: 12pt;
 }
 
 #topbar a {
@@ -40,13 +40,13 @@ body {
 }
 
 #splashscreen {
-	color: #ffea2f;
+	color: #0c3;
 	font-size: 160%;
 }
 
 #splashscreen a {
 	color: black;
-	background-color: #ffea2f;
+	background-color: #0c3;
 	padding: 10px 20px;
 	text-decoration: none;
 	margin: 10px;
