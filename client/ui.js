@@ -13,7 +13,7 @@
  License for the specific language governing permissions and limitations
  under the License.
 */
-
+/*
 function createMenu() {
   var menuShim = document.createElement('div');
   menuShim.id = 'menu_shim';
@@ -78,6 +78,16 @@ function displayMenu(display) {
   }
 }
 
+function startGame() {
+  if(uid) {
+    initGame();
+    displayMenu(false);
+  } else {
+    authUser();
+  }
+}
+*/
+
 function createLeaderboard(data) {
   var menuContainer = document.getElementById('menu_container');
   var leaderboardContainer = document.createElement('div');
@@ -125,16 +135,6 @@ function hideScore() {
   document.getElementById('final_score').innerHTML = "";
 }
 
-function startGame() {
-  if(uid) {
-    initGame();
-    displayMenu(false);
-  } else {
-    authUser();
-  }
-
-}
-
 function sendInvite() {
   // Use the Facebook JS SDK to open a Request MFS Dialog
   FB.ui({method: 'apprequests',
@@ -145,7 +145,6 @@ function sendInvite() {
 
 function sendBrag() {
   var messageStr = 'I just reached ' + gFinalScore + ' in Posta Sokoban!';
-
   FB.ui({ method: 'feed',
     caption: messageStr,
     picture: 'http://scoffey.github.com/postasokoban/images/box.png',

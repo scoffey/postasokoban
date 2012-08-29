@@ -18,9 +18,9 @@ window.addEvent('domready', function () {
 		run(0);
 	});
 	
-	$('sandbox').addEvent('click', function () {
-		getFriends();
-	});
+	$('getFriends').addEvent('click', function () { getFriends(); });
+	$('sendInvite').addEvent('click', function () { sendInvite(); });
+	$('sendBrag').addEvent('click', function () { sendBrag(); });
 	
 	if (!lastLevel)	{
 		$('resume').addClass('disabled');
