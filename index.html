@@ -68,6 +68,7 @@
 <script>
   var appId = '359179634160046';
   var uid = "0";
+  var accessToken = "0";
 
   // Initialize the JS SDK
   FB.init({
@@ -80,9 +81,15 @@
     uid = response.authResponse.userID ? response.authResponse.userID : null;
   });
 
-  function authUser() {
+  function authUser(level) {
     FB.login(function(response) {
-      uid = response.authResponse.userID ? response.authResponse.userID : null;
+		if (response.authResponse) {
+			uid = response.authResponse.userID;
+			accessToken = response.authResponse.accessToken;
+			startApp(level);
+		} else {
+			console.log('User cancelled login or did not fully authorize.');
+		}
     }, {scope:'email,publish_actions'});
   }
 </script>

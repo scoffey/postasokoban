@@ -47,7 +47,7 @@ window.addEvent('domready', function () {
 	  if(uid!="0") {
 		startApp(level);
 	  } else {
-		authUser();
+		authUser(level);
 	  }
   }
   
