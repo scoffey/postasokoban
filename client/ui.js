@@ -150,7 +150,7 @@ function sendBrag() {
     caption: messageStr,
     picture: 'http://scoffey.github.com/postasokoban/images/box.png',
     name: 'Play Posta Sokoban Now',
-    link: 'http://apps.facebook.com/criticalmasscomplete'
+    link: 'http://scoffey.github.com/postasokoban/'
   }, fbCallback);
 }
 
