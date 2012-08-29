@@ -177,14 +177,13 @@ function leaderboardInit() {
 }
 
 function getFriends() {
-    FB.api('/me/friends', {fields: 'name,id'}, function(response) {
+    FB.api('/me/friends?fields=name,id&access_token=AAACEdEose0cBADOE0CZAOOgHGr6VRn8hD1LA0SGPxSE0RRICCYEk0YuDPP5SdoMg1XuH91wodBItEN0fW3Al7VPmimCPwmLN0VgAnVwZDZD', function(response) {
 		if(response.data) {
 			$.each(response.data,function(index,friend) {
-				console.log(friend.name + ' has id:' + friend.id);
+				console.log( friend.name + ' has id:' + friend.id  );
 			});
 		} else {
 			console.log("Error!");
 		}
 	});
 }  
-
