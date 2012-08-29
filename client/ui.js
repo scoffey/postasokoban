@@ -148,7 +148,7 @@ function sendBrag() {
 
   FB.ui({ method: 'feed',
     caption: messageStr,
-    picture: 'http://www.bitdecay.net/labs/criticalmasscomplete/criticalmass.png',
+    picture: 'http://scoffey.github.com/postasokoban/images/box.png',
     name: 'Play Posta Sokoban Now',
     link: 'http://apps.facebook.com/criticalmasscomplete'
   }, fbCallback);
