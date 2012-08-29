@@ -43,7 +43,7 @@ function createMenu() {
   stage.appendChild(welcomeMsgContainer);
 
   var welcomeMsg = document.createElement('div');
-  var welcomeMsgStr = 'Welcome to Critical Mass';
+  var welcomeMsgStr = 'Welcome to Posta Sokoban';
   welcomeMsg.innerHTML = welcomeMsgStr;
   welcomeMsg.id = 'welcome_msg';
   welcomeMsgContainer.appendChild(welcomeMsg);
@@ -138,18 +138,18 @@ function startGame() {
 function sendInvite() {
   // Use the Facebook JS SDK to open a Request MFS Dialog
   FB.ui({method: 'apprequests',
-    title: 'Play Critical Mass with me!',
-    message: 'Been having a blast playing Critical Mass, come check it out.',
+    title: 'Play Posta Sokoban with me!',
+    message: 'Been having a blast playing Posta Sokoban, come check it out.',
   }, fbCallback);
 }
 
 function sendBrag() {
-  var messageStr = 'I just reached ' + gFinalScore + ' in Critical Mass!';
+  var messageStr = 'I just reached ' + gFinalScore + ' in Posta Sokoban!';
 
   FB.ui({ method: 'feed',
     caption: messageStr,
-    picture: 'http://www.bitdecay.net/labs/criticalmasscomplete/criticalmass.png',
-    name: 'Play Critical Mass Now',
+    picture: 'http://scoffey.github.com/postasokoban/images/box.png',
+    name: 'Play Posta Sokoban Now',
     link: 'http://apps.facebook.com/criticalmasscomplete'
   }, fbCallback);
 }
