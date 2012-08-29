@@ -53,11 +53,7 @@
 			<a id="start" href="javascript:void(0);">Start game</a>
 			<a id="resume" href="javascript:void(0);">Resume game</a>
 		</p>
-			<iframe 
-			src="https://www.facebook.com/plugins/like.php?href=http://scoffey.github.com/postasokoban/"
-			scrolling="no" frameborder="0"
-			style="border:none; width:450px; height:80px">
-		</iframe>
+			<div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
 	</div>
 	<div id="content" style="display: none;">
 		<div id="sokoban"></div>
@@ -98,6 +94,14 @@
     }, {scope:'email,publish_actions'});
   }
 </script>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=359179634160046";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <script type="text/javascript" src="js/sokowalter.js"></script>
 <script type="text/javascript" src="js/postasokoban.js"></script>
