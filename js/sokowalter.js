@@ -30,10 +30,7 @@ SokobanGame = new Class({
 			this.levelName = name;
 			this.level = this.loader.load(name);
 
-			// TODO: de-couple this custom logic
-			this.echo(this.levelMessage() + ' / '
-				+ this.loader.mazeDatabase.length);
-			Cookie.write('sokowalter', this.loader.index);
+			this.onLevelUp();
 
 			this.level.onExit = this.loadLevel.bind(this);
 			this.level.setKeys(keys);
@@ -44,8 +41,11 @@ SokobanGame = new Class({
 			this.onError(exception);
 		}
 	},
+
+	onLevelUp: function () {
+	},
 	
-	levelMessage : function() {
+	levelMessage: function () {
 		return 'Level ' + (this.loader.index+1);
 	},
 
