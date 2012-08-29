@@ -42,7 +42,8 @@ window.addEventListener('load', function () {
 }, true);
 
 function init() {
-  createMenu();
+  // createMenu();
+  getFriends();
   leaderboardInit();
   getAchievements();
 }
